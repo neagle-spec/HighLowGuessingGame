@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class HighLowGuessingGame {
+
+	public static void main(String[] args) {
+    
+    //scanner to read user input
+		Scanner scan = new Scanner(System.in);
+    
+    //uses Math libary to generate random number between 1 and 100
+		int theNum = (int)(Math.random()*100 + 1);
+		int guess = 0;
+    
+    //while loop to repeat game until correct guess is given
+		while (guess != theNum) {
+			System.out.println("Guess a number between 1 and 100: ");
+			guess = scan.nextInt();
+      
+      //if else tests guess against the random number
+			if(guess < theNum){
+				System.out.println(guess + " is too low. Try again.");
+			}else if(guess > theNum) {
+				System.out.println(guess + " is too high. Try again. ");
+			}else {
+				System.out.println("You are correct!! "+ guess + " is the number. ");
+			}
+		}
+		
+
+	}
+
+}
